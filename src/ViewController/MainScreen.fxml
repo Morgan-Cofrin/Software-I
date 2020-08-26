@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?language javascript?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="575.0" prefWidth="1040.0" styleClass="anchorPane" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+   <Label alignment="CENTER" layoutX="50.0" layoutY="56.0" prefHeight="30.0" prefWidth="363.0" styleClass="headerLabel" text="Inventory Management System" textFill="#1c3186" AnchorPane.topAnchor="56.0">
+      <font>
+         <Font name="System Bold" size="18.0" />
+      </font>
+   </Label>
+   <HBox layoutX="40.0" layoutY="125.0" prefHeight="375.0" prefWidth="965.0" AnchorPane.leftAnchor="40.0" AnchorPane.rightAnchor="35.0">
+      <padding>
+         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+      </padding>
+      <VBox prefHeight="300.0" prefWidth="464.0">
+         <HBox.margin>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </HBox.margin>
+         <Pane prefHeight="100.0" prefWidth="200.0">
+            <VBox.margin>
+               <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+            </VBox.margin>
+            <Label alignment="CENTER" layoutY="20.0" prefHeight="30.0" prefWidth="70.0" styleClass="chartLabel" text="Parts">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <Button fx:id="btnSearchPart" layoutX="183.0" layoutY="20.0" mnemonicParsing="false" onMouseClicked="#searchPart" prefHeight="25.0" prefWidth="85.0" styleClass="searchButton" text="Search" />
+            <TextField fx:id="partSearchBar" layoutX="280.0" layoutY="20.0" prefHeight="27.0" prefWidth="143.0" />
+         </Pane>
+         <TableView fx:id="partsTable" prefHeight="200.0" prefWidth="200.0">
+            <columns>
+               <TableColumn fx:id="partIDColumn" prefWidth="98.0" styleClass="textFieldLabel" text="Part ID">
+                  <cellValueFactory>
+                     <PropertyValueFactory property="partID" />
+                  </cellValueFactory>
+               </TableColumn>
+               <TableColumn fx:id="partNameColumn" prefWidth="136.0" styleClass="textFieldLabel" text="Part Name">
+                  <cellValueFactory>
+                     <PropertyValueFactory property="partName" />
+                  </cellValueFactory>
+               </TableColumn>
+               <TableColumn fx:id="partInStockColumn" prefWidth="124.0" styleClass="textFieldLabel" text="Inventory Count">
+                  <cellValueFactory>
+                     <PropertyValueFactory property="partInStock" />
+                  </cellValueFactory>
+               </TableColumn>
+               <TableColumn fx:id="partPriceColumn" prefWidth="100.0" styleClass="textFieldLabel" text="Part Price">
+                  <cellValueFactory>
+                     <PropertyValueFactory property="partPrice" />
+                  </cellValueFactory>
+               </TableColumn>
+            </columns>
+            <VBox.margin>
+               <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+            </VBox.margin>
+         </TableView>
+         <HBox prefHeight="100.0" prefWidth="232.0">
+            <VBox.margin>
+               <Insets bottom="5.0" left="80.0" right="5.0" top="5.0" />
+            </VBox.margin>
+            <Button fx:id="btnAddPart" mnemonicParsing="false" onMouseClicked="#gotoAddPartScreen" prefHeight="50.0" prefWidth="100.0" styleClass="allButtons" text="Add">
+               <HBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </HBox.margin>
+            </Button>
+            <Button fx:id="btnModifyPart" layoutX="15.0" layoutY="15.0" mnemonicParsing="false" onMouseClicked="#gotoModifyPartScreen" prefHeight="50.0" prefWidth="100.0" styleClass="allButtons" text="Modify">
+               <HBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </HBox.margin>
+            </Button>
+            <Button fx:id="btnDeletePart" layoutX="224.0" layoutY="10.0" mnemonicParsing="false" onMouseClicked="#deletePart" prefHeight="50.0" prefWidth="100.0" styleClass="allButtons" text="Delete">
+               <HBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </HBox.margin>
+            </Button>
+         </HBox>
+      </VBox>
+      <VBox prefHeight="300.0" prefWidth="464.0">
+         <HBox.margin>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </HBox.margin>
+         <Pane prefHeight="100.0" prefWidth="200.0">
+            <VBox.margin>
+               <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+            </VBox.margin>
+            <Label alignment="CENTER" layoutY="20.0" prefHeight="30.0" prefWidth="85.0" styleClass="chartLabel" text="Products">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <Button fx:id="btnSearchProduct" layoutX="183.0" layoutY="20.0" mnemonicParsing="false" onMouseClicked="#searchProduct" prefHeight="25.0" prefWidth="85.0" styleClass="searchButton" text="Search" />
+            <TextField fx:id="productSearchBar" layoutX="280.0" layoutY="20.0" prefHeight="27.0" prefWidth="143.0" />
+         </Pane>
+         <TableView fx:id="productsTable" prefHeight="200.0" prefWidth="200.0">
+            <columns>
+               <TableColumn fx:id="productIDColumn" prefWidth="102.0" styleClass="textFieldLabel" text="Product ID">
+                  <cellValueFactory>
+                     <PropertyValueFactory property="productID" />
+                  </cellValueFactory>
+               </TableColumn>
+               <TableColumn fx:id="productNameColumn" prefWidth="132.0" styleClass="textFieldLabel" text="Product Name">
+                  <cellValueFactory>
+                     <PropertyValueFactory property="productName" />
+                  </cellValueFactory>
+               </TableColumn>
+               <TableColumn fx:id="productInStockColumn" prefWidth="121.0" styleClass="textFieldLabel" text="Inventory Count">
+                  <cellValueFactory>
+                     <PropertyValueFactory property="productInStock" />
+                  </cellValueFactory>
+               </TableColumn>
+               <TableColumn fx:id="productPriceColumn" prefWidth="100.0" styleClass="textFieldLabel" text="Product Price">
+                  <cellValueFactory>
+                     <PropertyValueFactory property="productPrice" />
+                  </cellValueFactory>
+               </TableColumn>
+            </columns>
+            <VBox.margin>
+               <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+            </VBox.margin>
+         </TableView>
+         <HBox prefHeight="100.0" prefWidth="232.0">
+            <VBox.margin>
+               <Insets bottom="5.0" left="80.0" right="5.0" top="5.0" />
+            </VBox.margin>
+            <Button fx:id="btnAddProduct" mnemonicParsing="false" onMouseClicked="#gotoAddProductScreen" prefHeight="50.0" prefWidth="100.0" styleClass="allButtons" text="Add">
+               <HBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </HBox.margin>
+            </Button>
+            <Button fx:id="btnModifyProduct" layoutX="15.0" layoutY="15.0" mnemonicParsing="false" onMouseClicked="#gotoModifyProductScreen" prefHeight="50.0" prefWidth="100.0" styleClass="allButtons" text="Modify">
+               <HBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </HBox.margin>
+            </Button>
+            <Button fx:id="btnDeleteProduct" layoutX="224.0" layoutY="10.0" mnemonicParsing="false" onMouseClicked="#deleteProduct" prefHeight="50.0" prefWidth="100.0" styleClass="allButtons" text="Delete">
+               <HBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </HBox.margin>
+            </Button>
+         </HBox>
+      </VBox>
+   </HBox>
+   <Button fx:id="exitButton" layoutX="888.0" layoutY="500.0" mnemonicParsing="false" onMouseClicked="#exitApplication" prefHeight="50.0" prefWidth="100.0" styleClass="allButtons" text="Exit" AnchorPane.bottomAnchor="25.0" />
+</AnchorPane>

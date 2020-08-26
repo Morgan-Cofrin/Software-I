@@ -1,0 +1,43 @@
+.anchorPane{
+    -fx-background-color: #bebebe;
+}
+
+.searchButton{
+    -fx-border-color: #000000;
+    -fx-border-radius: 5px;
+    -fx-font-family: sans-serif;
+    -fx-font-size: 11px;
+    -fx-font-weight: bold;
+    -fx-pref-height: 20px;
+    -fx-pref-width: 80;
+}
+
+.allButtons {
+    -fx-border-color: #000000;
+    -fx-border-radius: 5px;
+    -fx-font-family: sans-serif;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-pref-height: 40px;
+    -fx-pref-width: 80;
+}
+
+.headerLabel{
+    -fx-font-color: #1c3186;
+    -fx-font-family: sans-serif;
+    -fx-font-size: 22px;
+    -fx-font-weight: bold;
+}
+
+.chartLabel{
+    -fx-font-color: #000000;
+    -fx-font-family: sans-serif;
+    -fx-font-size:18px;
+    -fx-font-weight: bold;
+}
+
+.textFieldLabel{
+    -fx-font-family: sans-serif;
+    -fx-font-weight: bold;
+}
+

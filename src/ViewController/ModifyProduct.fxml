@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<AnchorPane prefHeight="512.0" prefWidth="851.0" styleClass="anchorPane" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+    <GridPane layoutX="38.0" layoutY="81.0" prefHeight="339.0" prefWidth="313.0">
+        <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="200.0" minWidth="10.0" prefWidth="69.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="155.0" minWidth="0.0" prefWidth="115.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="154.0" minWidth="10.0" prefWidth="39.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="154.0" minWidth="10.0" prefWidth="96.0" />
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+        <Label fx:id="lblProductID" styleClass="textFieldLabel" text="ID">
+            <GridPane.margin>
+                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+            </GridPane.margin>
+        </Label>
+        <Label fx:id="lblProductName" styleClass="textFieldLabel" text="Name" GridPane.rowIndex="1">
+            <GridPane.margin>
+                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+            </GridPane.margin>
+        </Label>
+        <Label fx:id="lblProductInStock" styleClass="textFieldLabel" text="Inv" GridPane.rowIndex="2">
+            <GridPane.margin>
+                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+            </GridPane.margin>
+        </Label>
+        <Label fx:id="lblProductPrice" styleClass="textFieldLabel" text="Price" GridPane.rowIndex="3">
+            <GridPane.margin>
+                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+            </GridPane.margin>
+        </Label>
+        <Label fx:id="lblProductMax" styleClass="textFieldLabel" text="Max" GridPane.columnIndex="2" GridPane.rowIndex="4">
+            <GridPane.margin>
+                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+            </GridPane.margin>
+        </Label>
+        <TextField fx:id="textFieldProductName" promptText="Product Name" GridPane.columnIndex="1" GridPane.rowIndex="1">
+            <GridPane.margin>
+                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+            </GridPane.margin>
+        </TextField>
+        <TextField fx:id="textFieldProductInStock" promptText="Inv" GridPane.columnIndex="1" GridPane.rowIndex="2">
+            <GridPane.margin>
+                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+            </GridPane.margin>
+        </TextField>
+        <TextField fx:id="textFieldProductPrice" promptText="Price" GridPane.columnIndex="1" GridPane.rowIndex="3">
+            <GridPane.margin>
+                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+            </GridPane.margin>
+        </TextField>
+        <TextField fx:id="textFieldProductMax" promptText="Max" GridPane.columnIndex="3" GridPane.rowIndex="4">
+            <GridPane.margin>
+                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+            </GridPane.margin>
+        </TextField>
+        <Label fx:id="lblProductMin" styleClass="textFieldLabel" text="Min" GridPane.rowIndex="4">
+            <GridPane.margin>
+                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+            </GridPane.margin>
+        </Label>
+        <TextField fx:id="textFieldProductMin" promptText="Min" GridPane.columnIndex="1" GridPane.rowIndex="4">
+            <GridPane.margin>
+                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+            </GridPane.margin>
+        </TextField>
+      <Label fx:id="lblProductIDToChange" styleClass="textFieldLabel" text="ID To Change" GridPane.columnIndex="1">
+         <GridPane.margin>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </GridPane.margin>
+      </Label>
+    </GridPane>
+    <Label layoutX="61.0" layoutY="39.0" styleClass="headerLabel" text="Modify Product" />
+
+    <TableView fx:id="partsTable" layoutX="370.0" layoutY="81.0" prefHeight="120.0" prefWidth="450.0">
+        <columns>
+            <TableColumn fx:id="partIDColumn" prefWidth="75.0" resizable="false" styleClass="textFieldLabel" text="Part ID">
+                <cellValueFactory>
+                    <PropertyValueFactory property="partID" />
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn fx:id="partNameColumn" prefWidth="108.0" resizable="false" styleClass="textFieldLabel" text="Part Name">
+                <cellValueFactory>
+                    <PropertyValueFactory property="partName" />
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn fx:id="partInStockColumn" prefWidth="111.0" resizable="false" styleClass="textFieldLabel" text="Inventory Count">
+                <cellValueFactory>
+                    <PropertyValueFactory property="partInStock" />
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn fx:id="partPriceColumn" prefWidth="154.0" resizable="false" styleClass="textFieldLabel" text="Part Price">
+                <cellValueFactory>
+                    <PropertyValueFactory property="partPrice" />
+                </cellValueFactory>
+            </TableColumn>
+        </columns>
+    </TableView>
+
+    <TableView fx:id="associatedPartsTable" layoutX="369.0" layoutY="277.0" prefHeight="120.0" prefWidth="450.0">
+        <columns>
+            <TableColumn fx:id="associatedPartIDColumn" prefWidth="75.0" resizable="false" styleClass="textFieldLabel" text="Part ID">
+                <cellValueFactory>
+                    <PropertyValueFactory property="partID" />
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn fx:id="associatedPartNameColumn" prefWidth="108.0" resizable="false" styleClass="textFieldLabel" text="Part Name">
+                <cellValueFactory>
+                    <PropertyValueFactory property="partName" />
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn fx:id="associatedPartInStockColumn" prefWidth="111.0" resizable="false" styleClass="textFieldLabel" text="Inventory Count">
+                <cellValueFactory>
+                    <PropertyValueFactory property="partInStock" />
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn fx:id="associatedPartPriceColumn" prefWidth="154.0" resizable="false" styleClass="textFieldLabel" text="Part Price">
+                <cellValueFactory>
+                    <PropertyValueFactory property="partPrice" />
+                </cellValueFactory>
+            </TableColumn>
+        </columns>
+    </TableView>
+
+    <Button fx:id="btnSearchPart" layoutX="550.0" layoutY="35.0" mnemonicParsing="false" onMouseClicked="#searchPart" styleClass="searchButton" text="Search" />
+    <TextField fx:id="partSearchBar" layoutX="642.0" layoutY="35.0" />
+    <Button fx:id="btnAddAssociatedPart" layoutX="740.0" layoutY="217.0" mnemonicParsing="false" onMouseClicked="#addAssociatedPart" prefHeight="25.0" prefWidth="52.0" styleClass="allButtons" text="Add" />
+    <Button fx:id="btnSaveProduct" layoutX="550.0" layoutY="464.0" mnemonicParsing="false" onMouseClicked="#saveProduct" prefHeight="25.0" prefWidth="52.0" styleClass="allButtons" text="Save" />
+    <Button fx:id="cancelButton" cancelButton="true" layoutX="650.0" layoutY="464.0" mnemonicParsing="false" onMouseClicked="#cancel" styleClass="allButtons" text="Cancel" />
+    <Button fx:id="btnDeleteAssociatedPart" layoutX="740.0" layoutY="415.0" mnemonicParsing="false" onMouseClicked="#deleteAssociatedPart" prefHeight="25.0" prefWidth="52.0" styleClass="allButtons" text="Delete" />
+</AnchorPane>
